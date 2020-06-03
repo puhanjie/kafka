@@ -9,7 +9,6 @@ import java.util.Arrays;
 
 @Controller("apushController")
 public class ApushController {
-
     @Autowired
     private KafkaProducer kafkaProducer;
 

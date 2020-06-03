@@ -49,7 +49,7 @@ public class KafkaProducer {
         param.put("audience", audience);
         param.put("message", message);
 
-        logger.info("发送消息 ----->>>>>  message = {}", gson.toJson(param));
+        logger.info("发送消息 ----->>>>> message = {}", gson.toJson(param));
         kafkaTemplate.send(sendTopic, gson.toJson(param));  //发送消息到kafka
     }
 }
