@@ -11,20 +11,19 @@ import java.util.Optional;
 
 @Component
 public class KafkaConsumer {
-
     private static Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
 
     @Value("${apush.config.receive-topic}")
     private String receiveTopic;
 
     //监听消息
-    @KafkaListener(topics = {"apush-msg-ack-topic-tdh"})
+    @KafkaListener(topics = {"apush-msg-topic-tdh"})    //监听topic为apush-msg-topic-tdh的消息
     public void listen(ConsumerRecord<?, ?> record) {
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
             Object message = kafkaMessage.get();
-            logger.info("----------------- record = " + record);
-            logger.info("------------------ message = " + message);
+            logger.info("接收记录 ----->>>>> record = " + record);
+            logger.info("接收消息 ----->>>>> message = " + message);
         }
     }
 }
