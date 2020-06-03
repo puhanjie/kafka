@@ -3,7 +3,6 @@ package com.puhj.kafka.entity;
 import java.util.List;
 
 public class Audience {
-
     private int type;
     private List<String> targets;
 

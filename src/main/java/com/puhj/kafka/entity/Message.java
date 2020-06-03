@@ -1,7 +1,6 @@
 package com.puhj.kafka.entity;
 
 public class Message {
-
     private String content;
 
     public Message(String message) {
@@ -22,5 +21,4 @@ public class Message {
                 "content='" + content + '\'' +
                 '}';
     }
-
 }
